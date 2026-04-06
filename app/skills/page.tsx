@@ -7,7 +7,6 @@ import {
     CardContent,
 } from "@/components/ui/card";
 import { HyperText } from "@/components/ui/hyper-text";
-import { Meteors } from "@/components/ui/meteors";
 
 const skillCategories = [
     {
@@ -65,7 +64,6 @@ export default function SkillsPage() {
         <div className="min-h-screen bg-amber-50 dark:bg-background text-foreground transition-colors duration-200">
             {/* Meteors - fixed position to cover entire viewport */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-                <Meteors className="" />
             </div>
 
             <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
