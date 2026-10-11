@@ -89,7 +89,7 @@ export default function NewHero() {
               <span className="block text-foreground">Hi, I'm</span>
               <div className="text-ink -mt-1 sm:-mt-2">
                 <MorphingText
-                  texts={["Dipak Bhandari", "Developer"]}
+                  texts={["Dipak", "Developer"]}
                   className="h-16 sm:h-20 lg:h-24 justify-center lg:justify-start"
                 />
               </div>
