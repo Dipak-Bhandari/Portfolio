@@ -82,7 +82,7 @@ export default function Skills() {
             <CardTitle>Now Playing</CardTitle>
             <CardDescription>Stairway to Heaven - Led Zeppelin</CardDescription>
           </CardHeader> */}
-          <CardContent>
+          {/* <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-3xl font-bold text-ink mb-2 justify-start text-center">
                 <HyperText>1+</HyperText>
@@ -97,7 +97,7 @@ export default function Skills() {
                 <p className="text-muted-foreground">Client Satisfaction</p>
               </div>
             </div>
-          </CardContent>
+          </CardContent> */}
 
         </div>
         {skillCategories.map((category, index) => (
