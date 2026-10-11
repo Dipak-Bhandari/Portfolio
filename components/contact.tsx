@@ -3,21 +3,21 @@ import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-24">
-      <div className="max-w-3xl">
+      <div>
         <h2 className="scribble text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-        <p className="text-muted-foreground mb-8 leading-relaxed">
+        <p className="text-muted-foreground mb-8 max-w-2xl leading-relaxed">
           I'm always interested in hearing about new projects and opportunities.
           Whether you have a question or just want to say hello, feel free to
           reach out!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
           <div className="flex items-start gap-4 p-6 doodle bg-card">
             <Mail
               className="text-ink mt-1 flex-shrink-0"
               size={24}
             />
-            <div>
+            <div className="min-w-0 break-words">
               <h3 className="font-bold mb-1">Email</h3>
               <a
                 href="mailto:nescoz.dipak@gmail.com"
@@ -33,7 +33,7 @@ export default function Contact() {
               className="text-ink mt-1 flex-shrink-0"
               size={24}
             />
-            <div>
+            <div className="min-w-0 break-words">
               <h3 className="font-bold mb-1">Phone</h3>
               <a
                 href="tel:+9841386576"
@@ -49,7 +49,7 @@ export default function Contact() {
               className="text-ink mt-1 flex-shrink-0"
               size={24}
             />
-            <div>
+            <div className="min-w-0 break-words">
               <h3 className="font-bold mb-1">Location</h3>
               <p className="text-muted-foreground">Kathmandu, Nepal</p>
             </div>
@@ -60,7 +60,7 @@ export default function Contact() {
               className="text-ink mt-1 flex-shrink-0"
               size={24}
             />
-            <div>
+            <div className="min-w-0 break-words">
               <h3 className="font-bold mb-1">LinkedIn</h3>
               <a
                 href="https://www.linkedin.com/in/dipak-bhandari"

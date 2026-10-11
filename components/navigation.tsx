@@ -108,6 +108,12 @@ export default function Navigation() {
               Skills
             </a>
             <a
+              href="#team"
+              className="text-sm hover:text-ink transition-colors"
+            >
+              Team
+            </a>
+            <a
               href="#contact"
               className="text-sm hover:text-ink transition-colors"
             >
@@ -161,6 +167,13 @@ export default function Navigation() {
               className="block text-sm hover:text-ink transition-colors py-2"
             >
               Skills
+            </a>
+            <a
+              href="#team"
+              onClick={closeMenu}
+              className="block text-sm hover:text-ink transition-colors py-2"
+            >
+              Team
             </a>
             <a
               href="#contact"
