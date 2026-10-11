@@ -76,7 +76,7 @@ export default function SkillsPage() {
 
                     <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
                         <div className="doodle bg-card relative w-[100%] overflow-hidden">
-                            <CardContent className="pt-6">
+                            {/* <CardContent className="pt-6">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="text-3xl font-bold text-ink mb-2 justify-start text-center">
                                         <HyperText>+4</HyperText>
@@ -91,7 +91,7 @@ export default function SkillsPage() {
                                         <p className="text-muted-foreground text-base font-normal">Client Satisfaction</p>
                                     </div>
                                 </div>
-                            </CardContent>
+                            </CardContent> */}
 
                         </div>
 
