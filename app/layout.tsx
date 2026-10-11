@@ -62,20 +62,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: "AR-logo.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "AR-logo.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "AR-logo.png",
-        type: "image/png",
-      },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: "AR-logo.png",
   },
   robots: {
     index: true,

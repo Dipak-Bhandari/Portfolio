@@ -1,6 +1,5 @@
 "use client";
 
-import { ScrollRevealList } from "./ui/scroll-reveal";
 import {
   CardContent,
   CardDescription,
@@ -77,8 +76,8 @@ export default function Skills() {
       <p className="text-muted-foreground mb-12 max-w-2xl">
         Technical skills and expertise developed through hands-on experience with modern web technologies.
       </p>
-      <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
-        <div className="doodle bg-card relative w-[100%] overflow-hidden">
+      <div className="md:columns-2 md:gap-6">
+        <div className="doodle bg-card relative mb-6 overflow-hidden md:[column-span:all]">
           {/* <CardHeader>
             <CardTitle>Now Playing</CardTitle>
             <CardDescription>Stairway to Heaven - Led Zeppelin</CardDescription>
@@ -104,7 +103,7 @@ export default function Skills() {
         {skillCategories.map((category, index) => (
           <div
             key={`skill-${index}`}
-            className="p-6 doodle doodle-lift bg-card"
+            className="mb-6 break-inside-avoid p-6 doodle doodle-lift bg-card"
           >
             <h3 className="text-lg font-bold mb-4 text-ink">
               {category.category}
@@ -128,34 +127,8 @@ export default function Skills() {
             </div>
           </div>
         ))}
-      </ScrollRevealList>
+      </div>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
-        {skillCategories.map((category, index) => (
-          <div
-            key={index}
-            className="p-6 doodle bg-card hover:shadow-lg transition-shadow"
-          >
-            <h3 className="text-lg font-bold mb-4 text-ink">
-              {category.category}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="chip px-4 py-2 text-sm font-medium"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
-
-      {/* Additional Info */}
-
-      {/* </div> */}
     </section>
   );
 }

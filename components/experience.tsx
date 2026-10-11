@@ -35,24 +35,20 @@ export default function Experience() {
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0 border-l-2 border-dashed border-ink md:transform md:-translate-x-1/2"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-0 border-l-2 border-dashed border-ink"></div>
 
         <div className="space-y-12">
           <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`relative
-                  ${index % 2 === 0
-                    ? "md:mr-1/2 md:pr-12"
-                    : "md:ml-1/2 md:pl-12"
-                  }`}
+                className="relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-auto md:right-full md:mr-[-8px] lg:left-1/2 top-6 w-4 h-4 bg-primary rounded-full border-2 border-ink lg:transform lg:-translate-x-1/2 md:-translate-y-1/2"></div>
+                <div className="absolute left-0 top-6 w-4 h-4 bg-primary rounded-full border-2 border-ink -translate-x-1/2 -translate-y-1/2"></div>
 
                 {/* Card */}
-                <div className="ml-8 md:ml-0 p-6 doodle doodle-lift bg-card">
+                <div className="ml-8 p-6 doodle doodle-lift bg-card">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                     <div>
                       <h3 className="text-xl font-bold text-foreground">

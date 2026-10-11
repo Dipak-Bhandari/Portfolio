@@ -1,9 +1,8 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode;
@@ -13,8 +12,7 @@ interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
 interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   name: string;
   className?: string;
-  background: ReactNode;
-  Icon: React.ElementType;
+  image: string;
   description: string;
   href: string;
   cta: string;
@@ -25,17 +23,21 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
-    <div className={cn("grid w-full  grid-cols-3 gap-4", className)} {...props}>
+    <div className={cn("grid w-full grid-cols-1 gap-6", className)} {...props}>
       {children}
     </div>
   );
 };
 
+const linkClass =
+  "doodle doodle-lift inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold";
+
+// Logo banner on top, text below; chips and links sit at the bottom
+// so cards in the same row line up even when their text lengths differ.
 const BentoCard = ({
   name,
   className,
-  background,
-  Icon,
+  image,
   description,
   href,
   cta,
@@ -45,98 +47,66 @@ const BentoCard = ({
   ...props
 }: BentoCardProps) => (
   <div
-    key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden doodle doodle-lift bg-card",
+      "flex flex-col overflow-hidden doodle doodle-lift bg-card",
       className
     )}
     {...props}
   >
-    <div>{background}</div>
-    <div className="p-6 flex flex-col min-h-0">
-      <div className="flex-1 z-10 transform-gpu flex flex-col gap-3 transition-all duration-300 lg:group-hover:-translate-y-10">
-        <Icon className="h-12 w-12 origin-left transform-gpu text-ink transition-all duration-300 ease-in-out group-hover:scale-75" />
-        
-        <div className="flex items-center gap-2 flex-wrap">
-          <h3 className="text-xl font-semibold text-card-foreground">
-            {name}
-          </h3>
-          <span className="chip px-2 py-1 text-xs font-medium">
-            {year}
-          </span>
-        </div>
+    {/* White plate keeps dark and coloured logos readable in both themes */}
+    <div className="flex h-32 items-center justify-center border-b-2 border-ink bg-white p-4">
+      <Image
+        src={image}
+        alt={`${name} logo`}
+        width={128}
+        height={128}
+        className="h-16 w-auto max-w-full object-contain"
+      />
+    </div>
 
-        <p className="text-sm text-muted-foreground line-clamp-4 group-hover:line-clamp-none">
-          {description}
-        </p>
-        
+    <div className="flex flex-1 flex-col gap-3 p-6">
+      <div className="flex flex-wrap items-center gap-2">
+        <h3 className="text-xl font-semibold text-card-foreground">{name}</h3>
+        <span className="chip px-2 py-1 text-xs font-medium">{year}</span>
+      </div>
+
+      <p className="text-sm text-muted-foreground">{description}</p>
+
+      <div className="mt-auto flex flex-col gap-4 pt-2">
         <div className="flex flex-wrap gap-2">
-          {technologies.map((tech, i) => (
-            <span
-              key={i}
-              className="chip px-2 py-1 text-xs"
-            >
+          {technologies.map((tech) => (
+            <span key={tech} className="chip px-2 py-1 text-xs">
               {tech}
             </span>
           ))}
         </div>
-      </div>
 
-      {/* Mobile/Tablet buttons - always visible */}
-      <div className="flex gap-3 mt-4 lg:hidden">
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
-          >
-            <Github size={16} /> Code
-          </a>
-        )}
-        {href && (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
-          >
-            <ExternalLink size={16} /> Live Demo
-          </a>
+        {(href || github) && (
+          <div className="flex flex-wrap gap-3">
+            {href && (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(linkClass, "bg-primary text-primary-foreground")}
+              >
+                <ExternalLink size={16} /> {cta}
+              </a>
+            )}
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(linkClass, "bg-card text-ink")}
+              >
+                <Github size={16} /> GitHub
+              </a>
+            )}
+          </div>
         )}
       </div>
     </div>
-
-    {/* Desktop buttons - show on hover */}
-    <div
-      className={cn(
-        "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 sm:p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex lg:gap-3"
-      )}
-    >
-      {github && (
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
-        >
-          <Github size={16} /> Code
-        </a>
-      )}
-
-      {href && (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
-        >
-          <ExternalLink size={16} /> Live Demo
-        </a>
-      )}
-    </div>
-
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-ink/5" />
   </div>
 );
 

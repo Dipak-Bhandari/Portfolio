@@ -11,13 +11,14 @@ import {
   Plus,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { MorphingText } from "./ui/morphing-text";
 
 export default function NewHero() {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Dipak-Bhandari-CV.pdf";
+    link.href = "/DipakBhandariCV.pdf";
     link.download = "Dipak-Bhandari-Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -25,7 +26,7 @@ export default function NewHero() {
   };
 
   return (
-    <section className="relative lg:max-h-[850px] flex items-center justify-center py-8 overflow-hidden">
+    <section className="relative flex items-center justify-center py-8 overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 "></div>
 
@@ -59,6 +60,26 @@ export default function NewHero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
+          {/* Intro photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative mx-auto mb-8 h-40 w-40 sm:h-48 sm:w-48"
+          >
+            <div className="absolute -inset-2 rounded-full border-2 border-dashed border-primary" />
+            <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-ink shadow-[4px_4px_0_var(--ink)]">
+            <Image
+              src={encodeURI("/portfolio-team/The One.jpeg")}
+              alt="Portrait of Dipak Bhandari"
+              fill
+              priority
+              sizes="192px"
+              className="origin-[48%_14%] scale-[1.35] object-cover object-[50%_12%]"
+            />
+            </div>
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -104,11 +125,14 @@ export default function NewHero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Building web applications using{" "}
+            I'm a full stack developer based in Kathmandu who likes turning ideas into
+            clean, fast web apps, mostly with{" "}
             <span className="text-ink font-semibold">Laravel</span>,{" "}
-            <span className="text-ink font-semibold">Inertia.js</span>, and{" "}
-            <span className="text-ink font-semibold">React</span>. Experienced with RESTful APIs,
-            PostgreSQL/MySQL, and responsive layouts using Tailwind CSS.
+            <span className="text-ink font-semibold">Inertia.js</span> and{" "}
+            <span className="text-ink font-semibold">React</span>. I've shipped
+            browser extensions and web platforms, including{" "}
+            <span className="text-ink font-semibold">Tabnix</span>, a Chrome
+            extension I built on my own.
           </motion.p>
 
           {/* Location & Email */}
