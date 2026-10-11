@@ -1,9 +1,7 @@
 "use client";
 
 import { ScrollRevealList } from "./ui/scroll-reveal";
-import { BorderBeam } from "./ui/border-beam";
 import {
-  Card,
   CardContent,
   CardDescription,
   CardHeader,
@@ -73,61 +71,49 @@ const skillCategories = [
 export default function Skills() {
   return (
     <section id="skills" className="py-20 md:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <h2 className="scribble text-3xl md:text-4xl font-bold mb-4">
         Skills & Expertise
       </h2>
       <p className="text-muted-foreground mb-12 max-w-2xl">
         Technical skills and expertise developed through hands-on experience with modern web technologies.
       </p>
       <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
-        <Card className="relative w-[100%] overflow-hidden">
+        <div className="doodle bg-card relative w-[100%] overflow-hidden">
           {/* <CardHeader>
             <CardTitle>Now Playing</CardTitle>
             <CardDescription>Stairway to Heaven - Led Zeppelin</CardDescription>
           </CardHeader> */}
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-3xl font-bold text-primary mb-2 justify-start text-center">
+              <div className="text-3xl font-bold text-ink mb-2 justify-start text-center">
                 <HyperText>1+</HyperText>
                 <p className="text-muted-foreground">Years of Experience</p>
               </div>
-              <div className="text-3xl font-bold text-primary mb-2 text-center">
+              <div className="text-3xl font-bold text-ink mb-2 text-center">
                 <HyperText>3+</HyperText>
                 <p className="text-muted-foreground">Major Projects</p>
               </div>
-              <div className="text-3xl font-bold text-primary mb-2 text-center">
+              <div className="text-3xl font-bold text-ink mb-2 text-center">
                 <HyperText>100%</HyperText>
                 <p className="text-muted-foreground">Client Satisfaction</p>
               </div>
             </div>
           </CardContent>
 
-          <BorderBeam
-            duration={6}
-            size={400}
-            className="from-transparent via-red-500 to-transparent"
-          />
-          <BorderBeam
-            duration={6}
-            delay={3}
-            size={400}
-            borderWidth={2}
-            className="from-transparent via-blue-500 to-transparent"
-          />
-        </Card>
+        </div>
         {skillCategories.map((category, index) => (
           <div
             key={`skill-${index}`}
-            className="p-6 rounded-lg border border-border bg-card hover:shadow-lg hover:border-amber-600/50 transition-shadow"
+            className="p-6 doodle doodle-lift bg-card"
           >
-            <h3 className="text-lg font-bold mb-4 text-amber-700 dark:text-amber-500">
+            <h3 className="text-lg font-bold mb-4 text-ink">
               {category.category}
             </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, i) => (
                 <span
                   key={`skill-${i}`}
-                  className="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-600/20 text-foreground hover:border-amber-600/50 transition-colors"
+                  className="chip px-4 py-2 text-sm font-medium"
                 >
                   {skill}
                 </span>
@@ -148,16 +134,16 @@ export default function Skills() {
         {skillCategories.map((category, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow"
+            className="p-6 doodle bg-card hover:shadow-lg transition-shadow"
           >
-            <h3 className="text-lg font-bold mb-4 text-amber-700 dark:text-amber-500">
+            <h3 className="text-lg font-bold mb-4 text-ink">
               {category.category}
             </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-600/20 text-foreground hover:border-amber-600/50 transition-colors"
+                  className="chip px-4 py-2 text-sm font-medium"
                 >
                   {skill}
                 </span>

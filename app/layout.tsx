@@ -1,7 +1,7 @@
 
 import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Delius_Swash_Caps, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
@@ -11,8 +11,8 @@ import { Separator } from "@radix-ui/react-separator";
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
 import Navigation from "@/components/navigation";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const delius = Delius_Swash_Caps({ subsets: ["latin"], weight: "400", variable: "--font-delius" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 
 
@@ -98,7 +98,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body className={`${delius.variable} ${jetbrains.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

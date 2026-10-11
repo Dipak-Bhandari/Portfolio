@@ -26,7 +26,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="py-20 md:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <h2 className="scribble text-3xl md:text-4xl font-bold mb-4">
         Professional Experience
       </h2>
       <p className="text-muted-foreground mb-12 max-w-2xl">
@@ -35,7 +35,7 @@ export default function Experience() {
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-amber-600 to-yellow-600 md:transform md:-translate-x-1/2"></div>
+        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0 border-l-2 border-dashed border-ink md:transform md:-translate-x-1/2"></div>
 
         <div className="space-y-12">
           <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
@@ -49,16 +49,16 @@ export default function Experience() {
                   }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-auto md:right-full md:mr-[-8px] lg:left-1/2 top-6 w-4 h-4 bg-amber-600 rounded-full border-4 border-background lg:transform lg:-translate-x-1/2 md:-translate-y-1/2"></div>
+                <div className="absolute left-0 md:left-auto md:right-full md:mr-[-8px] lg:left-1/2 top-6 w-4 h-4 bg-primary rounded-full border-2 border-ink lg:transform lg:-translate-x-1/2 md:-translate-y-1/2"></div>
 
                 {/* Card */}
-                <div className="ml-8 md:ml-0 p-6 rounded-lg border border-border bg-card hover:shadow-lg hover:border-amber-600/50 transition-shadow">
+                <div className="ml-8 md:ml-0 p-6 doodle doodle-lift bg-card">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                     <div>
                       <h3 className="text-xl font-bold text-foreground">
                         {exp.role}
                       </h3>
-                      <p className="text-amber-700 dark:text-amber-500 font-medium">
+                      <p className="text-ink font-medium">
                         {exp.company}
                       </p>
                     </div>
@@ -78,7 +78,7 @@ export default function Experience() {
                     {exp.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
+                        className="chip px-3 py-1 text-xs font-medium"
                       >
                         {tech}
                       </span>

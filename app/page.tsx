@@ -13,7 +13,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-background text-foreground transition-colors duration-200">
+    <div className="min-h-screen bg-background paper text-foreground transition-colors duration-200">
       {/* Icon Cloud Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center opacity-30 dark:opacity-20">
         <IconCloud
@@ -63,7 +63,7 @@ export default function Home() {
         </ScrollReveal>
       </main>
 
-      <footer className="mt-24 py-8 border-t border-border">
+      <footer className="mt-24 py-8 border-t-2 border-dashed border-ink/40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-muted-foreground">

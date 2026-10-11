@@ -66,7 +66,7 @@ const features = [
 
 export default function ProjectsPage() {
     return (
-        <div className="min-h-screen bg-amber-50 dark:bg-background text-foreground transition-colors duration-200">
+        <div className="min-h-screen bg-background paper text-foreground transition-colors duration-200">
             {/* Meteors - fixed position to cover entire viewport */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
             </div>

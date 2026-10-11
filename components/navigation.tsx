@@ -81,35 +81,35 @@ export default function Navigation() {
 
   if (!mounted) return null;
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 border-b-2 border-ink bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-bold bg-gradient-to-r from-amber-700 to-yellow-600 bg-clip-text text-transparent">
+          <div className="text-xl font-bold text-ink">
             Dipak Bhandari
           </div>
 
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#experience"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-ink transition-colors"
             >
               Experience
             </a>
             <a
               href="#projects"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-ink transition-colors"
             >
               Projects
             </a>
             <a
               href="#skills"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-ink transition-colors"
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-ink transition-colors"
             >
               Contact
             </a>
@@ -119,7 +119,7 @@ export default function Navigation() {
             <button
               ref={buttonRef}
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+              className="p-2 rounded-lg hover:bg-accent transition-colors"
               aria-label="Toggle theme"
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
@@ -127,7 +127,7 @@ export default function Navigation() {
 
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -144,28 +144,28 @@ export default function Navigation() {
             <a
               href="#experience"
               onClick={closeMenu}
-              className="block text-sm hover:text-primary transition-colors py-2"
+              className="block text-sm hover:text-ink transition-colors py-2"
             >
               Experience
             </a>
             <a
               href="#projects"
               onClick={closeMenu}
-              className="block text-sm hover:text-primary transition-colors py-2"
+              className="block text-sm hover:text-ink transition-colors py-2"
             >
               Projects
             </a>
             <a
               href="#skills"
               onClick={closeMenu}
-              className="block text-sm hover:text-primary transition-colors py-2"
+              className="block text-sm hover:text-ink transition-colors py-2"
             >
               Skills
             </a>
             <a
               href="#contact"
               onClick={closeMenu}
-              className="block text-sm hover:text-primary transition-colors py-2"
+              className="block text-sm hover:text-ink transition-colors py-2"
             >
               Contact
             </a>

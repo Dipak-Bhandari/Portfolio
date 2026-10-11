@@ -32,7 +32,7 @@ export function TeamSwitcher() {
             />
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight">
-            <span className="text-xl font-bold bg-gradient-to-r from-amber-700 to-yellow-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold text-ink">
               Dipak Bhandari
             </span>
 

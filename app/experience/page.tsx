@@ -34,7 +34,7 @@ const experiences = [
 
 export default function ExperiencePage() {
     return (
-        <div className="min-h-screen bg-amber-50 dark:bg-background text-foreground transition-colors duration-200">
+        <div className="min-h-screen bg-background paper text-foreground transition-colors duration-200">
             {/* Meteors - fixed position to cover entire viewport */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
             </div>
@@ -51,23 +51,23 @@ export default function ExperiencePage() {
 
                     <div className="relative">
                         {/* Timeline line */}
-                        <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-600 to-yellow-600"></div>
+                        <div className="absolute left-0 md:left-8 top-0 bottom-0 w-0 border-l-2 border-dashed border-ink"></div>
 
                         <div className="space-y-12">
                             <ScrollRevealList variant="fadeUp" staggerDelay={0.15} className="mb-4">
                                 {experiences.map((exp, index) => (
                                     <div key={index} className="relative ml-8 md:ml-16">
                                         {/* Timeline dot */}
-                                        <div className="absolute -left-8 md:-left-16 top-6 w-4 h-4 bg-amber-600 rounded-full border-4 border-background transform -translate-x-1/2"></div>
+                                        <div className="absolute -left-8 md:-left-16 top-6 w-4 h-4 bg-primary rounded-full border-2 border-ink transform -translate-x-1/2"></div>
 
                                         {/* Card */}
-                                        <div className="p-6 rounded-lg border border-border bg-card hover:shadow-lg hover:border-amber-600/50 transition-shadow">
+                                        <div className="p-6 doodle doodle-lift bg-card">
                                             <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                                                 <div>
                                                     <h3 className="text-xl font-bold text-foreground">
                                                         {exp.role}
                                                     </h3>
-                                                    <p className="text-amber-700 dark:text-amber-500 font-medium">
+                                                    <p className="text-ink font-medium">
                                                         {exp.company}
                                                     </p>
                                                 </div>
@@ -87,7 +87,7 @@ export default function ExperiencePage() {
                                                 {exp.technologies.map((tech, i) => (
                                                     <span
                                                         key={i}
-                                                        className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
+                                                        className="chip px-3 py-1 text-xs font-medium"
                                                     >
                                                         {tech}
                                                     </span>
