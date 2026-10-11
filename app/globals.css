@@ -3,80 +3,80 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Doodle design system tokens: primary #49B6E5, secondary #263D5B, text #111827.
+   --ink is the outline/accent-text colour: navy on light, sky blue on dark (both pass AA on --background). */
 :root {
-  --card: oklch(0.96 0.015 75);
-  --card-foreground: oklch(0.25 0.02 60);
-  --popover: oklch(0.96 0.015 75);
-  --popover-foreground: oklch(0.25 0.02 60);
-  --primary: oklch(0.45 0.12 60);
-  --primary-foreground: oklch(0.97 0.01 75);
-  --secondary: oklch(0.95 0.02 70);
-  --secondary-foreground: oklch(0.30 0.02 60);
-  --muted: oklch(0.94 0.02 75);
-  --muted-foreground: oklch(0.50 0.03 65);
-  --accent: oklch(0.92 0.04 70);
-  --accent-foreground: oklch(0.35 0.05 60);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0.001 280);
-  --border: oklch(0.88 0.02 75);
-  --input: oklch(0.88 0.02 75);
-  --ring: oklch(0.50 0.08 65);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --background: #f6fafd;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #49b6e5;
+  --primary-foreground: #111827;
+  --secondary: #263d5b;
+  --secondary-foreground: #ffffff;
+  --muted: #e8f3fa;
+  --muted-foreground: #475569;
+  --accent: #d6edf9;
+  --accent-foreground: #263d5b;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #bbd3e3;
+  --input: #bbd3e3;
+  --ring: #263d5b;
+  --ink: #263d5b;
+  --chart-1: #49b6e5;
+  --chart-2: #263d5b;
+  --chart-3: #16a34a;
+  --chart-4: #d97706;
+  --chart-5: #dc2626;
   --radius: 0.625rem;
-  --sidebar: oklch(0.96 0.015 75);
-  --sidebar-foreground: oklch(0.30 0.02 60);
-  --sidebar-primary: oklch(0.45 0.12 60);
-  --sidebar-primary-foreground: oklch(0.97 0.01 75);
-  --sidebar-accent: oklch(0.94 0.02 70);
-  --sidebar-accent-foreground: oklch(0.30 0.02 60);
-  --sidebar-border: oklch(0.88 0.02 75);
-  --sidebar-ring: oklch(0.50 0.08 65);
-  --background: oklch(0.97 0.01 75);
-  --foreground: oklch(0.25 0.02 60);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #49b6e5;
+  --sidebar-primary-foreground: #111827;
+  --sidebar-accent: #d6edf9;
+  --sidebar-accent-foreground: #263d5b;
+  --sidebar-border: #bbd3e3;
+  --sidebar-ring: #263d5b;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.98 0.001 280);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #0f1b2b;
+  --foreground: #f1f5f9;
+  --card: #16273b;
+  --card-foreground: #f1f5f9;
+  --popover: #16273b;
+  --popover-foreground: #f1f5f9;
+  --primary: #49b6e5;
+  --primary-foreground: #0b1522;
+  --secondary: #263d5b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1c3047;
+  --muted-foreground: #a9b8cb;
+  --accent: #1f3955;
+  --accent-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2f4a69;
+  --input: #2f4a69;
+  --ring: #49b6e5;
+  --ink: #49b6e5;
+  --sidebar: #16273b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #49b6e5;
+  --sidebar-primary-foreground: #0b1522;
+  --sidebar-accent: #1f3955;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #2f4a69;
+  --sidebar-ring: #49b6e5;
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: var(--font-delius), "Comic Sans MS", cursive;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --color-ink: var(--ink);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -175,5 +175,59 @@
   ::view-transition-new(root) {
     animation: none;
     mix-blend-mode: normal;
+  }
+}
+
+/* Doodle look: wobbly ink outline, hard offset shadow, dashed focus ring. */
+@utility doodle {
+  border: 2px solid var(--ink);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+@utility doodle-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover,
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+@utility chip {
+  border: 2px dashed var(--ink);
+  border-radius: 9999px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+@utility scribble {
+  text-decoration: underline wavy var(--primary);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+}
+
+@utility paper {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--ink) 18%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px dashed var(--ring);
+    outline-offset: 3px;
   }
 }

@@ -31,7 +31,7 @@ export default function NewHero() {
 
       {/* Animated circles */}
       <motion.div
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-72 h-72 border-2 border-dashed border-primary rounded-full"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -43,7 +43,7 @@ export default function NewHero() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-stone-600/10 dark:bg-stone-700/10 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 border-2 border-dashed border-ink/40 rounded-full"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.3, 0.5, 0.3],
@@ -64,7 +64,7 @@ export default function NewHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-amber-100 dark:bg-amber-950 border border-amber-300 dark:border-amber-800 text-amber-900 dark:text-amber-200"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 doodle bg-accent text-accent-foreground"
           >
             <Globe size={16} className="animate-pulse" />
             <span className="text-sm font-medium">
@@ -80,7 +80,7 @@ export default function NewHero() {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-0 leading-tight"
           >
             <span className="block text-foreground mb-1">Hi, I'm</span>
-            <div className="text-amber-600 dark:text-amber-500 -mt-2 sm:-mt-4">
+            <div className="text-ink -mt-2 sm:-mt-4">
               <MorphingText
                 texts={["Dipak Bhandari", "Developer"]}
                 className="h-20 sm:h-20 md:h-24 lg:h-28"
@@ -105,9 +105,9 @@ export default function NewHero() {
             className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             Building web applications using{" "}
-            <span className="text-primary font-semibold">Laravel</span>,{" "}
-            <span className="text-primary font-semibold">Inertia.js</span>, and{" "}
-            <span className="text-primary font-semibold">React</span>. Experienced with RESTful APIs,
+            <span className="text-ink font-semibold">Laravel</span>,{" "}
+            <span className="text-ink font-semibold">Inertia.js</span>, and{" "}
+            <span className="text-ink font-semibold">React</span>. Experienced with RESTful APIs,
             PostgreSQL/MySQL, and responsive layouts using Tailwind CSS.
           </motion.p>
 
@@ -124,7 +124,7 @@ export default function NewHero() {
             <span className="hidden sm:inline">•</span>
             <a
               href="mailto:nescoz.dipak@gmail.com"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-ink transition-colors"
             >
               <Mail size={18} />
               nescoz.dipak@gmail.com
@@ -132,7 +132,7 @@ export default function NewHero() {
             <span className="hidden sm:inline">•</span>
             <a
               href="tel:9866260928"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-ink transition-colors"
             >
               <Phone size={18} />
               9866260928
@@ -148,16 +148,15 @@ export default function NewHero() {
           >
             <button
               onClick={handleDownloadCV}
-              className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-700 to-yellow-600 dark:from-amber-600 dark:to-yellow-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105"
+              className="group doodle doodle-lift inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold"
             >
               <Download size={20} className="group-hover:animate-bounce" />
               Download CV
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 opacity-0 group-hover:opacity-20 blur transition-opacity"></div>
             </button>
 
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-amber-700 dark:border-amber-600 text-amber-900 dark:text-amber-200 rounded-xl font-semibold hover:bg-amber-100 dark:hover:bg-amber-950 transition-all duration-300 hover:scale-105"
+              className="group doodle doodle-lift inline-flex items-center gap-2 px-8 py-4 bg-card text-ink font-semibold"
             >
               View My Work
               <ArrowRight
@@ -178,7 +177,7 @@ export default function NewHero() {
               href="https://github.com/dipak-bhandari"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-amber-300 dark:border-amber-700 hover:border-amber-600 dark:hover:border-amber-500 hover:bg-amber-100 dark:hover:bg-amber-950 transition-all duration-300 hover:scale-110"
+              className="p-3 doodle doodle-lift bg-card"
               aria-label="GitHub"
             >
               <Github size={24} />
@@ -187,14 +186,14 @@ export default function NewHero() {
               href="https://www.linkedin.com/in/dipak-bhandari"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-amber-300 dark:border-amber-700 hover:border-amber-600 dark:hover:border-amber-500 hover:bg-amber-100 dark:hover:bg-amber-950 transition-all duration-300 hover:scale-110"
+              className="p-3 doodle doodle-lift bg-card"
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:nescoz.dipak@gmail.com"
-              className="p-3 rounded-full border border-amber-300 dark:border-amber-700 hover:border-amber-600 dark:hover:border-amber-500 hover:bg-amber-100 dark:hover:bg-amber-950 transition-all duration-300 hover:scale-110"
+              className="p-3 doodle doodle-lift bg-card"
               aria-label="Email"
             >
               <Mail size={24} />

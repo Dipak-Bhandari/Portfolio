@@ -66,7 +66,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="min-h-screen bg-amber-50 dark:bg-background text-foreground transition-colors duration-200">
+        <div className="min-h-screen bg-background paper text-foreground transition-colors duration-200">
             {/* Meteors - fixed position to cover entire viewport */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
             </div>
@@ -75,11 +75,11 @@ export default function ContactPage() {
                 <section className="py-12 md:py-16">
                     {/* Header Section */}
                     <div className="text-center mb-12">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400 text-sm font-medium mb-4">
+                        <div className="inline-flex items-center gap-2 chip px-4 py-2 text-sm font-medium mb-4">
                             <Sparkles size={16} />
                             Let&apos;s Connect
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-ink">
                             Get In Touch
                         </h1>
                         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -92,7 +92,7 @@ export default function ContactPage() {
                         {/* Contact Information */}
                         <div>
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                                <MessageSquare className="text-amber-600" size={24} />
+                                <MessageSquare className="text-ink" size={24} />
                                 Contact Information
                             </h2>
 
@@ -100,11 +100,11 @@ export default function ContactPage() {
                                 {contactInfo.map((info, index) => (
                                     <div
                                         key={index}
-                                        className="group flex items-start gap-4 p-5 rounded-xl border border-border bg-card/80 backdrop-blur-sm hover:shadow-lg hover:border-amber-500/50 hover:bg-card transition-all duration-300"
+                                        className="group flex items-start gap-4 p-5 doodle doodle-lift bg-card"
                                     >
-                                        <div className="p-3 rounded-lg bg-gradient-to-br from-amber-100 to-yellow-100 dark:from-amber-950 dark:to-yellow-950 group-hover:from-amber-200 group-hover:to-yellow-200 dark:group-hover:from-amber-900 dark:group-hover:to-yellow-900 transition-colors duration-300">
+                                        <div className="p-3 rounded-lg bg-accent">
                                             <info.icon
-                                                className="text-amber-700 dark:text-amber-400"
+                                                className="text-ink"
                                                 size={22}
                                             />
                                         </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                                                     href={info.href}
                                                     target={info.href.startsWith("http") ? "_blank" : undefined}
                                                     rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                                                    className="text-amber-700 dark:text-amber-400 hover:underline transition-colors"
+                                                    className="text-ink hover:underline transition-colors"
                                                 >
                                                     {info.value}
                                                 </a>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                                         href="https://github.com/Dipak-Bhandari"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-white rounded-xl hover:from-amber-700 hover:to-yellow-600 transition-all duration-300 font-medium shadow-lg hover:shadow-amber-500/25 hover:-translate-y-0.5"
+                                        className="inline-flex items-center gap-2 px-6 py-3 doodle doodle-lift bg-primary text-primary-foreground font-medium"
                                     >
                                         <Github size={20} />
                                         Visit GitHub
@@ -143,7 +143,7 @@ export default function ContactPage() {
                                         href="linkedin.com/in/dipak-bhandari"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 border-2 border-amber-600 dark:border-amber-500 text-amber-700 dark:text-amber-400 rounded-xl hover:bg-amber-50 dark:hover:bg-amber-950/50 transition-all duration-300 font-medium hover:-translate-y-0.5"
+                                        className="inline-flex items-center gap-2 px-6 py-3 doodle doodle-lift bg-card text-ink font-medium"
                                     >
                                         <Linkedin size={20} />
                                         LinkedIn Profile
@@ -155,10 +155,9 @@ export default function ContactPage() {
                         {/* Contact Form */}
                         <ScrollReveal variant="fadeLeft" delay={0.2}>
                             <div className="relative">
-                                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-2xl blur-xl"></div>
                                 <div className="relative p-8 rounded-2xl border border-border bg-card/90 backdrop-blur-sm">
                                     <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                                        <Send className="text-amber-600" size={24} />
+                                        <Send className="text-ink" size={24} />
                                         Send a Message
                                     </h2>
 
@@ -182,7 +181,7 @@ export default function ContactPage() {
                                                     value={formData.name}
                                                     onChange={handleInputChange}
                                                     required
-                                                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-200"
+                                                    className="w-full px-4 py-3 rounded-xl border-2 border-ink bg-card"
                                                     placeholder="John Doe"
                                                 />
                                             </div>
@@ -197,7 +196,7 @@ export default function ContactPage() {
                                                     value={formData.email}
                                                     onChange={handleInputChange}
                                                     required
-                                                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-200"
+                                                    className="w-full px-4 py-3 rounded-xl border-2 border-ink bg-card"
                                                     placeholder="john@example.com"
                                                 />
                                             </div>
@@ -214,7 +213,7 @@ export default function ContactPage() {
                                                 value={formData.subject}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-200"
+                                                className="w-full px-4 py-3 rounded-xl border-2 border-ink bg-card"
                                                 placeholder="Project Inquiry"
                                             />
                                         </div>
@@ -230,7 +229,7 @@ export default function ContactPage() {
                                                 onChange={handleInputChange}
                                                 required
                                                 rows={5}
-                                                className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-200 resize-none"
+                                                className="w-full px-4 py-3 rounded-xl border-2 border-ink bg-card resize-none"
                                                 placeholder="Tell me about your project or inquiry..."
                                             />
                                         </div>
@@ -238,7 +237,7 @@ export default function ContactPage() {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-amber-600 to-yellow-500 text-white rounded-xl hover:from-amber-700 hover:to-yellow-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-amber-500/25 disabled:opacity-70 disabled:cursor-not-allowed hover:-translate-y-0.5"
+                                            className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 doodle doodle-lift bg-primary text-primary-foreground font-semibold disabled:opacity-70 disabled:cursor-not-allowed"
                                         >
                                             {isSubmitting ? (
                                                 <>

@@ -67,7 +67,7 @@ export default function Projects() {
   return (
     <React.Fragment>
       <section id="projects" className="py-20 md:py-24">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+        <h2 className="scribble text-3xl md:text-4xl font-bold mb-4">Projects</h2>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           A selection of significant projects I've built and contributed to,
           showcasing diverse technical skills.
@@ -85,7 +85,7 @@ export default function Projects() {
           {features.map((project, index) => (
             <div
               key={index}
-              className="group p-6 rounded-lg border border-border bg-card hover:shadow-lg hover:border-amber-600/50 transition-all duration-300"
+              className="group p-6 doodle bg-card hover:shadow-lg hover:border-amber-600/50 transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-bold group-hover:text-amber-700 dark:group-hover:text-amber-500 transition-colors">
@@ -104,7 +104,7 @@ export default function Projects() {
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 text-xs bg-amber-600/10 text-amber-700 dark:text-amber-500 rounded"
+                    className="chip px-2 py-1 text-xs"
                   >
                     {tech}
                   </span>
@@ -114,13 +114,13 @@ export default function Projects() {
               <div className="flex gap-4 pt-4 border-t border-border">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-amber-700 dark:hover:text-amber-500 transition-colors"
+                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
                 >
                   <Github size={16} /> Code
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-amber-700 dark:hover:text-amber-500 transition-colors"
+                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
                 >
                   <ExternalLink size={16} /> Live Demo
                 </a>

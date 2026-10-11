@@ -47,11 +47,7 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
-      // light styles
-      "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-      // dark styles
-      "dark:bg-background transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]",
+      "group relative col-span-3 flex flex-col justify-between overflow-hidden doodle doodle-lift bg-card",
       className
     )}
     {...props}
@@ -59,18 +55,18 @@ const BentoCard = ({
     <div>{background}</div>
     <div className="p-6 flex flex-col min-h-0">
       <div className="flex-1 z-10 transform-gpu flex flex-col gap-3 transition-all duration-300 lg:group-hover:-translate-y-10">
-        <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 dark:text-neutral-300 transition-all duration-300 ease-in-out group-hover:scale-75" />
+        <Icon className="h-12 w-12 origin-left transform-gpu text-ink transition-all duration-300 ease-in-out group-hover:scale-75" />
         
         <div className="flex items-center gap-2 flex-wrap">
-          <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+          <h3 className="text-xl font-semibold text-card-foreground">
             {name}
           </h3>
-          <span className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded">
+          <span className="chip px-2 py-1 text-xs font-medium">
             {year}
           </span>
         </div>
 
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-4 group-hover:line-clamp-none">
+        <p className="text-sm text-muted-foreground line-clamp-4 group-hover:line-clamp-none">
           {description}
         </p>
         
@@ -78,7 +74,7 @@ const BentoCard = ({
           {technologies.map((tech, i) => (
             <span
               key={i}
-              className="px-2 py-1 text-xs bg-amber-600/10 text-amber-700 dark:text-amber-500 rounded"
+              className="chip px-2 py-1 text-xs"
             >
               {tech}
             </span>
@@ -93,7 +89,7 @@ const BentoCard = ({
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-amber-700 dark:hover:text-amber-500 transition-colors"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
           >
             <Github size={16} /> Code
           </a>
@@ -103,7 +99,7 @@ const BentoCard = ({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-amber-700 dark:hover:text-amber-500 transition-colors"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
           >
             <ExternalLink size={16} /> Live Demo
           </a>
@@ -122,7 +118,7 @@ const BentoCard = ({
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
         >
           <Github size={16} /> Code
         </a>
@@ -133,14 +129,14 @@ const BentoCard = ({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+          className="pointer-events-auto inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ink transition-colors"
         >
           <ExternalLink size={16} /> Live Demo
         </a>
       )}
     </div>
 
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
+    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-ink/5" />
   </div>
 );
 
